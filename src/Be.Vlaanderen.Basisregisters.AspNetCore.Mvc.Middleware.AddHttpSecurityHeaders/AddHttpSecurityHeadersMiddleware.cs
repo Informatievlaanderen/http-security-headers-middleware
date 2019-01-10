@@ -14,17 +14,27 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
         public static string XssProtectionHeaderName = "x-xss-protection";
 
         private readonly RequestDelegate _next;
+        private readonly string _serverName;
+        private readonly string _poweredByName;
 
-        public AddHttpSecurityHeadersMiddleware(RequestDelegate next) => _next = next;
+        public AddHttpSecurityHeadersMiddleware(
+            RequestDelegate next,
+            string serverName = "Vlaamse overheid",
+            string poweredByName = "Vlaamse overheid - Basisregisters Vlaanderen")
+        {
+            _next = next;
+            _serverName = serverName;
+            _poweredByName = poweredByName;
+        }
 
         public Task Invoke(HttpContext context)
         {
             context.Response.Headers.Remove("Server");
             context.Response.Headers.Remove("X-Powered-By");
 
-            context.Response.Headers.Add("Server", "Vlaamse overheid");
+            context.Response.Headers.Add("Server", _serverName);
 
-            context.Response.Headers.Add(PoweredByHeaderName, "Vlaamse overheid - Basisregisters Vlaanderen");
+            context.Response.Headers.Add(PoweredByHeaderName, _poweredByName);
             context.Response.Headers.Add(ContentTypeOptionsHeaderName, "nosniff");
             context.Response.Headers.Add(FrameOptionsHeaderName, "DENY");
             context.Response.Headers.Add(XssProtectionHeaderName, "1; mode=block");
