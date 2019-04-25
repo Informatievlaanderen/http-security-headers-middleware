@@ -1,3 +1,5 @@
+## [1.1.1](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v1.1.0...v1.1.1) (2019-04-25)
+
 # [1.1.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v1.0.0...v1.1.0) (2019-01-10)
 
 
