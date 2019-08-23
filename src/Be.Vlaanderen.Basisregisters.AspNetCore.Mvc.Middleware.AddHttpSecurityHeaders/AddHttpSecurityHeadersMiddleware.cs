@@ -31,7 +31,7 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
         public Task Invoke(HttpContext context)
         {
             context.Response.Headers.Remove(ServerHeaderName);
-            context.Response.Headers.Remove("X-Powered-By");
+            context.Response.Headers.Remove(PoweredByHeaderName);
 
             context.Response.Headers.Add(ServerHeaderName, _serverName);
             context.Response.Headers.Add(PoweredByHeaderName, _poweredByName);
