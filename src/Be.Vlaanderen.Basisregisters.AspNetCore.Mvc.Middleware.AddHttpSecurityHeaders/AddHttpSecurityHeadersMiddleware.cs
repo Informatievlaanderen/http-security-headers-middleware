@@ -8,6 +8,7 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
     /// </summary>
     public class AddHttpSecurityHeadersMiddleware
     {
+        public static string ServerHeaderName = "Server";
         public static string PoweredByHeaderName = "x-powered-by";
         public static string ContentTypeOptionsHeaderName = "x-content-type-options";
         public static string FrameOptionsHeaderName = "x-frame-options";
@@ -29,11 +30,10 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
 
         public Task Invoke(HttpContext context)
         {
-            context.Response.Headers.Remove("Server");
+            context.Response.Headers.Remove(ServerHeaderName);
             context.Response.Headers.Remove("X-Powered-By");
 
-            context.Response.Headers.Add("Server", _serverName);
-
+            context.Response.Headers.Add(ServerHeaderName, _serverName);
             context.Response.Headers.Add(PoweredByHeaderName, _poweredByName);
             context.Response.Headers.Add(ContentTypeOptionsHeaderName, "nosniff");
             context.Response.Headers.Add(FrameOptionsHeaderName, "DENY");
