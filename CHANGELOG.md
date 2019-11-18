@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v1.2.1...v2.0.0) (2019-11-18)
+
+
+### Code Refactoring
+
+* upgrade to netcoreapp30 ([4efee3a](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/4efee3a))
+
+
+### BREAKING CHANGES
+
+* Upgrade to .NET Core 3
+
 ## [1.2.1](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v1.2.0...v1.2.1) (2019-10-28)
 
 
