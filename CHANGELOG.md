@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.1.0...v2.2.0) (2020-01-31)
+
+
+### Features
+
+* upgrade netcoreapp31 and dependencies ([10ce9d8](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/10ce9d80d78fdd8947c0f951e8876d2fbc024442))
+
 # [2.1.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.0.0...v2.1.0) (2019-12-15)
 
 
