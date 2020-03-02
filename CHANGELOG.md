@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.2.0...v2.2.1) (2020-03-02)
+
+
+### Bug Fixes
+
+* bump netcore to 3.1.2 ([04d71e3](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/04d71e3c6c5b3fc006a0ef70d6205b8a4d2bbe3f))
+
 # [2.2.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.1.0...v2.2.0) (2020-01-31)
 
 
