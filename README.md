@@ -1,4 +1,4 @@
-# Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware.AddHttpSecurityHeaders
+# Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware.AddHttpSecurityHeaders [![Build Status](https://github.com/Informatievlaanderen/http-security-headers-middleware/workflows/CI/badge.svg)](https://github.com/Informatievlaanderen/http-security-headers-middleware/actions)
 
 Middleware component which replaces and adds common security related http headers.
 
