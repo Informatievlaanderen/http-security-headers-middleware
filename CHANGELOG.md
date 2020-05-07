@@ -1,3 +1,11 @@
+## [2.2.2](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.2.1...v2.2.2) (2020-05-07)
+
+
+### Bug Fixes
+
+* move to GH-actions ([f907876](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/f907876900f9a6022a4d759bb9a8ec1c8d974014))
+* poke gh-actions? ([cd5f7e1](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/cd5f7e1f1ca957a4165fdbf5e9039e12dada5dd8))
+
 ## [2.2.1](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.2.0...v2.2.1) (2020-03-02)
 
 
