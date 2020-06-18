@@ -1,6 +1,6 @@
 {
   "name": "http-security-headers-middleware",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Middleware component which replaces and adds common security related http headers.",
   "author": "Basisregisters Vlaanderen",
   "license": "MIT",
@@ -48,7 +48,10 @@
     ]
   },
   "release": {
-    "branches": [ "master", "main" ],
+    "branches": [
+      "master",
+      "main"
+    ],
     "verifyConditions": [
       "@semantic-release/changelog",
       "@semantic-release/git",
