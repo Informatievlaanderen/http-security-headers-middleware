@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.2.4...v2.3.0) (2020-06-22)
+
+
+### Features
+
+* add more frame options directives ([8a81880](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/8a81880c4bf63d4d3f030da3bc7a51a27a4dd55c))
+
 ## [2.2.4](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.2.3...v2.2.4) (2020-06-18)
 
 
