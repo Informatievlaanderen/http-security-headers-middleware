@@ -1,5 +1,6 @@
 namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
 {
+    using System;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Http;
 
@@ -9,23 +10,34 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
     public class AddHttpSecurityHeadersMiddleware
     {
         public static string ServerHeaderName = "Server";
-        public static string PoweredByHeaderName = "x-powered-by";
-        public static string ContentTypeOptionsHeaderName = "x-content-type-options";
-        public static string FrameOptionsHeaderName = "x-frame-options";
-        public static string XssProtectionHeaderName = "x-xss-protection";
+        public static string PoweredByHeaderName = "X-Powered-By";
+        public static string ContentTypeOptionsHeaderName = "X-Content-Type-Options";
+        public static string FrameOptionsHeaderName = "X-Frame-Options";
+        public static string XssProtectionHeaderName = "X-XSS-Protection";
 
         private readonly RequestDelegate _next;
         private readonly string _serverName;
         private readonly string _poweredByName;
+        private readonly FrameOptionsDirectives _frameOptionsDirectives;
 
         public AddHttpSecurityHeadersMiddleware(
             RequestDelegate next,
             string serverName = "Vlaamse overheid",
             string poweredByName = "Vlaamse overheid - Basisregisters Vlaanderen")
+        : this(next, serverName, poweredByName, FrameOptionsDirectives.Deny)
+        {
+        }
+
+        public AddHttpSecurityHeadersMiddleware(
+            RequestDelegate next,
+            string serverName = "Vlaamse overheid",
+            string poweredByName = "Vlaamse overheid - Basisregisters Vlaanderen",
+            FrameOptionsDirectives frameOptionsDirectives = FrameOptionsDirectives.Deny)
         {
             _next = next;
             _serverName = serverName;
             _poweredByName = poweredByName;
+            _frameOptionsDirectives = frameOptionsDirectives;
         }
 
         public Task Invoke(HttpContext context)
@@ -36,7 +48,19 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
             context.Response.Headers.Add(ServerHeaderName, _serverName);
             context.Response.Headers.Add(PoweredByHeaderName, _poweredByName);
             context.Response.Headers.Add(ContentTypeOptionsHeaderName, "nosniff");
-            context.Response.Headers.Add(FrameOptionsHeaderName, "DENY");
+
+            switch (_frameOptionsDirectives)
+            {
+                case FrameOptionsDirectives.Deny:
+                    context.Response.Headers.Add(FrameOptionsHeaderName, "DENY");
+                    break;
+                case FrameOptionsDirectives.SameOrigin:
+                    context.Response.Headers.Add(FrameOptionsHeaderName, "SAMEORIGIN");
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("frameOptionsDirectives", _frameOptionsDirectives, "FrameOptionsDirective can only be Deny or SameOrigin.");
+            }
+
             context.Response.Headers.Add(XssProtectionHeaderName, "1; mode=block");
 
             return _next(context);

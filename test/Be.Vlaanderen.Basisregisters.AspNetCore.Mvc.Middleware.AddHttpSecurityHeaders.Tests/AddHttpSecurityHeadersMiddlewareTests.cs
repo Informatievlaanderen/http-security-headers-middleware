@@ -1,6 +1,5 @@
 namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware.AddHttpSecurityHeaders.Tests
 {
-    using System.Net;
     using System.Threading.Tasks;
     using FluentAssertions;
     using Microsoft.AspNetCore.Http;
@@ -14,6 +13,7 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware.AddHttpSecurity
             var expectedServerName = "expectedName";
             var expectedPoweredBy = "expectedPowered";
             var middleware = new AddHttpSecurityHeadersMiddleware(innerContext => Task.CompletedTask, expectedServerName, expectedPoweredBy);
+
             var context = new DefaultHttpContext();
             context.Response.Headers.Add("X-Powered-By", "power!");
 
@@ -35,6 +35,18 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware.AddHttpSecurity
 
             context.Response.Headers.ContainsKey(AddHttpSecurityHeadersMiddleware.XssProtectionHeaderName).Should().BeTrue();
             context.Response.Headers[AddHttpSecurityHeadersMiddleware.XssProtectionHeaderName].Should().BeEquivalentTo("1; mode=block");
+        }
+
+        [Fact]
+        public async Task AddFrameOptionsSameOrigin()
+        {
+            var middleware = new AddHttpSecurityHeadersMiddleware(innerContext => Task.CompletedTask, "server", "powered", FrameOptionsDirectives.SameOrigin);
+
+            var context = new DefaultHttpContext();
+            await middleware.Invoke(context);
+
+            context.Response.Headers.ContainsKey(AddHttpSecurityHeadersMiddleware.FrameOptionsHeaderName).Should().BeTrue();
+            context.Response.Headers[AddHttpSecurityHeadersMiddleware.FrameOptionsHeaderName].Should().BeEquivalentTo("SAMEORIGIN");
         }
     }
 }
