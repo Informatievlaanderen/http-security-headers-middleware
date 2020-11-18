@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.3.2...v2.3.3) (2020-11-18)
+
+
+### Bug Fixes
+
+* remove set-env usage in gh-actions ([2d2bbe2](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/2d2bbe27eb51c0b7bd7e937580d383d8519c848c))
+
 ## [2.3.2](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.3.1...v2.3.2) (2020-09-21)
 
 
