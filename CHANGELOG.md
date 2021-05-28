@@ -1,3 +1,10 @@
+## [2.3.7](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.3.6...v2.3.7) (2021-05-28)
+
+
+### Bug Fixes
+
+* move to 5.0.6 ([2ef54d1](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/2ef54d11b059f4dbd50d74b82b10988d4583500d))
+
 ## [2.3.6](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.3.5...v2.3.6) (2021-02-02)
 
 
