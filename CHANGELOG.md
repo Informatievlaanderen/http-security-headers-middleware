@@ -1,3 +1,20 @@
+# [3.0.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.3.7...v3.0.0) (2022-03-24)
+
+
+### Bug Fixes
+
+* style to trigger build ([9fd2dbe](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/9fd2dbe435bf7a4b4ee8301500c0db33420a210a))
+
+
+### Features
+
+* move to dotnet 6.0.3 ([d885066](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/d8850668c6001b46b812cdfddc76ffd239ddd2db))
+
+
+### BREAKING CHANGES
+
+* move to dotnet 6.0.3
+
 # [3.0.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v2.3.7...v3.0.0) (2022-03-23)
 
 
