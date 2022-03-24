@@ -25,8 +25,7 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
             string serverName = "Vlaamse overheid",
             string poweredByName = "Vlaamse overheid - Basisregisters Vlaanderen")
         : this(next, serverName, poweredByName, FrameOptionsDirectives.Deny)
-        {
-        }
+        { }
 
         public AddHttpSecurityHeadersMiddleware(
             RequestDelegate next,
