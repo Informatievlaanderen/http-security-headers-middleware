@@ -15,7 +15,7 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware.AddHttpSecurity
             var middleware = new AddHttpSecurityHeadersMiddleware(innerContext => Task.CompletedTask, expectedServerName, expectedPoweredBy);
 
             var context = new DefaultHttpContext();
-            context.Response.Headers.Add("X-Powered-By", "power!");
+            context.Response.Headers.Append("X-Powered-By", "power!");
 
             await middleware.Invoke(context);
 
