@@ -1,3 +1,15 @@
+# [5.0.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v4.0.0...v5.0.0) (2025-04-04)
+
+
+### Code Refactoring
+
+* use renovate and nuget + update pipeline ([0e0c3ab](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/0e0c3ab000694eeee2fccae1b04cd28a753e01d7))
+
+
+### BREAKING CHANGES
+
+* update to dotnet 9
+
 # [4.0.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v3.0.0...v4.0.0) (2024-03-07)
 
 
