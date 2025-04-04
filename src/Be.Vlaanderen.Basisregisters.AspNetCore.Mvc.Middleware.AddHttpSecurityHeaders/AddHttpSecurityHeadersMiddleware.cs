@@ -44,23 +44,23 @@ namespace Be.Vlaanderen.Basisregisters.AspNetCore.Mvc.Middleware
             context.Response.Headers.Remove(ServerHeaderName);
             context.Response.Headers.Remove(PoweredByHeaderName);
 
-            context.Response.Headers.Add(ServerHeaderName, _serverName);
-            context.Response.Headers.Add(PoweredByHeaderName, _poweredByName);
-            context.Response.Headers.Add(ContentTypeOptionsHeaderName, "nosniff");
+            context.Response.Headers.Append(ServerHeaderName, _serverName);
+            context.Response.Headers.Append(PoweredByHeaderName, _poweredByName);
+            context.Response.Headers.Append(ContentTypeOptionsHeaderName, "nosniff");
 
             switch (_frameOptionsDirectives)
             {
                 case FrameOptionsDirectives.Deny:
-                    context.Response.Headers.Add(FrameOptionsHeaderName, "DENY");
+                    context.Response.Headers.Append(FrameOptionsHeaderName, "DENY");
                     break;
                 case FrameOptionsDirectives.SameOrigin:
-                    context.Response.Headers.Add(FrameOptionsHeaderName, "SAMEORIGIN");
+                    context.Response.Headers.Append(FrameOptionsHeaderName, "SAMEORIGIN");
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("frameOptionsDirectives", _frameOptionsDirectives, "FrameOptionsDirective can only be Deny or SameOrigin.");
             }
 
-            context.Response.Headers.Add(XssProtectionHeaderName, "1; mode=block");
+            context.Response.Headers.Append(XssProtectionHeaderName, "1; mode=block");
 
             return _next(context);
         }
