@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v5.0.0...v5.1.0) (2026-06-01)
+
+
+### Features
+
+* update packages ([ff32eaf](https://github.com/informatievlaanderen/http-security-headers-middleware/commit/ff32eafdd90230106d3137247ce72a060e58f2ff))
+
 # [5.0.0](https://github.com/informatievlaanderen/http-security-headers-middleware/compare/v4.0.0...v5.0.0) (2025-04-04)
 
 
